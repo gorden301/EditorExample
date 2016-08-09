@@ -1,0 +1,94 @@
+.editor_left{
+    width: 340px;
+    float: left;
+    margin: 10px 5px 0 0;
+    padding: 10px;
+    background: #ffffff;
+
+}
+
+.editor_list{
+    width: 100%;
+    height: 685px;
+    float: left;
+    overflow-y: scroll;
+    margin: 0px auto;
+    padding-top: 8px;
+}
+
+.editor_ul{
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    color: #666666;
+}
+
+.editor_ul li{
+    width: 98%;
+    padding: 6px 0;
+    outline: 1px #ddd solid;
+    background: #ECECEC;
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.li_content{
+    width: 180px;
+    background: transparent;
+    margin: 5px 0 5px;
+    padding: 0 10px 0;
+    height: auto;
+}
+
+.li_title{
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    color: #363636;
+}
+
+.li_bottom{
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0;
+    color: #9B9B9B;
+    margin: 0 0 0 2px;
+}
+
+.text-align-center{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    line-height: 1.8
+}
+
+.li_pic{
+    max-width: 180px;
+    min-width: 170px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.editor_middle{
+    width: 540px;
+    background: #eeeeee;
+    margin: 10px 0px;
+    float: left;
+    padding: 10px;
+    position: relative;
+}
+
+.main_editor{
+    position: relative;
+    z-index: 3;
+    height: 328px;
+    overflow-y: auto;
+    padding-bottom: 60px;
+}
