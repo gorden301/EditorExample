@@ -6,8 +6,8 @@ define(["jquery","underscore","backbone","text!template/itemheader.html"],functi
             _.bindAll(this,"render","remove")
         },
         render: function () {
-            var html = this.template(this.model.toJSON());
-            $(this.el).html(html);
+            var html = this.template();
+            $(this.el).append(html);
             return this;
         },
         remove: function () {
