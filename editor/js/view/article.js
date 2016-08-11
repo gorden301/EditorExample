@@ -9,6 +9,7 @@ define(["jquery",
             events:{
                 "dblclick .text-align-center":"edit",
                 "blur .edit":"close",
+                "keypress .edit":"enterClose"
             },
             initialize: function () {
                 this.listenTo(this.model,"change",this.render);
@@ -22,6 +23,16 @@ define(["jquery",
             edit: function () {
                 this.$el.addClass("editing");
                 this.input.focus();
+            },
+            enterClose: function (e) {
+                if (e.keyCode != 13) return;
+                var value = this.input.val();
+                if (value) {
+                    this.model.set({
+                        tittle:value,
+                    });
+                    this.$el.removeClass("editing");
+                }
             },
             close: function () {
                 var value = this.input.val();

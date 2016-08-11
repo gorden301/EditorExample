@@ -139,3 +139,7 @@
 .tem_box.editing .text-align-center{
     display: none;
 }
+
+.tem_box.editing .content_title{
+    display: none;
+}
