@@ -14,8 +14,8 @@ require.config({
     },
     paths:{
         jquery:"libs/jquery-1.9.1.min",
-        underscore:"libs/underscore-min",
-        backbone:"libs/backbone-min",
+        underscore:"libs/underscore-1.6",
+        backbone:"libs/backbone-min-0.9.10",
         text:"libs/text",
         backboneLocalstorage:"libs/backbone-localstorage",
     }

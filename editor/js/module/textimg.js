@@ -5,9 +5,8 @@ define([
     function (_,Backbone) {
         var TextImg = Backbone.Model.extend({
             defaults:{
-
                 tittle:"",
-                article:"",
+                article:"正文",
             }
         });
         return TextImg;

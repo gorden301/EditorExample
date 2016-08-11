@@ -127,3 +127,15 @@
     margin: 0 0 0 8px;
     min-width: 80px;
 }
+
+.tem_box .edit{
+    display:none;
+}
+
+.tem_box.editing .edit{
+    display: block;
+}
+
+.tem_box.editing .text-align-center{
+    display: none;
+}

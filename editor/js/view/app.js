@@ -1,11 +1,12 @@
 define(["jquery",
     "underscore",
     "backbone",
+    "module/textimg",
     "collection/textimgs",
     "view/textimg",
     "view/article",
     "view/img"
-],function ($,_,Backbone,textimgs,TextImgView,articleView,imgView) {
+],function ($,_,Backbone,textimg,textimgs,TextImgView,articleView,imgView) {
     window.list = new textimgs ();
     var AppView = Backbone.View.extend({
         el:$("body"),
@@ -15,17 +16,32 @@ define(["jquery",
             "click .third":"add"
         },
         initialize: function () {
+            this.itemCollection = new textimgs();
             this.list = this.$(".main_editor");
            // _.bindAll(this,"render","add","loadList","save");
-            list.on("add",this.add);
+            //this.listenTo(list,"add",this.add);
+            //list.on("add",this.add);
         },
         add: function (e) {
             if(e.currentTarget.className == "first"){
-                var view = new TextImgView();
+                var textemodel = new textimg();
+                var view = new TextImgView({
+                    model:textemodel
+                });
+                list.add(textemodel);
             } else if (e.currentTarget.className == "second") {
-                var view = new articleView();
+                var articlemodel = new textimg();
+                var view = new articleView({
+                        model:articlemodel
+                    }
+                );
+                list.add(articlemodel);
             } else {
-                var view = new imgView();
+                var imgemodel = new textimg();
+                var view = new imgView({
+                    model:imgemodel
+                });
+                list.add(imgemodel);
             }
             this.list.append(view.render().el);
         },
