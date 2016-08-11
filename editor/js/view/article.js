@@ -26,7 +26,7 @@ define(["jquery",
             close: function () {
                 var value = this.input.val();
                 if (value) {
-                    this.model.save({
+                    this.model.set({
                         article:value,
                     });
                     this.$el.removeClass("editing");
