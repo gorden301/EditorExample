@@ -10,6 +10,9 @@ require.config({
       backboneLocalstorage:{
             deps:["backbone"],
             exports:"Store"
+        },
+        bootbox:{
+            deps:["jquery","bootstrap"],
         }
     },
     paths:{
@@ -18,6 +21,8 @@ require.config({
         backbone:"libs/backbone-min-0.9.10",
         text:"libs/text",
         backboneLocalstorage:"libs/backbone-localstorage",
+        bootstrap:"libs/bootstrap.min",
+        bootbox:"libs/bootbox.min"
     }
 });
 

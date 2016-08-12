@@ -70,6 +70,7 @@
 }
 
 .li_pic{
+    position: relative;
     max-width: 180px;
     min-width: 170px;
     width: 100%;
@@ -142,4 +143,22 @@
 
 .tem_box.editing .content_title{
     display: none;
+}
+
+.li_pic{
+    cursor: pointer;
+}
+
+.change_btn{
+    width: 90px;
+    float: left;
+}
+
+.changeImg{
+    display: none;
+    top: 20%;
+    position: absolute;
+    height: 30px;
+    width: 300px;
+    padding-top: 3px;
 }

@@ -7,14 +7,31 @@ define(["jquery",
         className:".tem_box",
         template: _.template(imgTem),
         events:{
-            "click img":"post",
+            "click img":"show",
+            "click button":"change",
+            "click .tem_box":"hide"
+        },
+        initialize: function () {
+            this.listenTo(this.model,"change",this.render);
         },
         render: function () {
-            this.$el.html(this.template());
+            this.$el.html(this.template(this.model.toJSON()));
             return this;
         },
-        post: function () {
-
+        show: function (){
+            this.$el.find(".changeImg").show();
+        },
+        change: function (e) {
+            var imgSrc = $(e.currentTarget).attr("data-src");
+            if (imgSrc) {
+                this.model.set({
+                    src:imgSrc
+                });
+                this.$el.find(".changeImg").hide();
+            }
+        },
+        hide: function () {
+            this.$el.find(".changeImg").hide();
         }
     });
     return imgView;
