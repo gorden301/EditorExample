@@ -11,6 +11,7 @@ define([
                 time:"12：00",
                 author:"作者名",
                 article:"正文",
+                type:"",
             }
         });
         return TextImg;

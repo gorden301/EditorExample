@@ -15,6 +15,7 @@ define(["jquery",
                 "click .del":"del"
             },
             initialize: function () {
+                $(".main_editor").append(this.render().el);
                 //this.listenTo(this.model,"change",this.render);
                 //this.model.on("change",this.render,this);
                 //this.model.on("change",this.render,this);

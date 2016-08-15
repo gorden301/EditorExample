@@ -37,11 +37,44 @@ require(["jquery","underscore","backbone","bootbox","module/textimg","collection
                 model:_model
             }
         );
-        initTiny();
-        $('#preview').on('click',function(){
-            bootbox.alert({
-                title:'预览',
-                message:$('.main_editor').html()
+        $(function(){
+            initTiny();
+
+            var getstore = JSON.parse(window.localStorage?localStorage.getItem("store"):Cookie.read("store"));
+            if(getstore) {
+                for (var i = 0; i < getstore.length; i++) {
+                    var model = new textimg(getstore[i]);
+                    list.add(model);
+
+                }
+            }
+
+            $(".second").on("click",function () {
+                var articlemodel = new textimg({type:"txt"});
+                list.add(articlemodel);
             });
-        });
+
+            $(".third").on("click",function () {
+                var imgemodel = new textimg({type:"img"});
+                list.add(imgemodel);
+            })
+
+            $('#preview').on('click',function (){
+                bootbox.alert({
+                    title:'预览',
+                    message:$('.main_editor').html()
+                });
+            });
+            $("#savelocal").on("click",function () {
+                var source = JSON.stringify(list);
+                if(window.localStorage){
+                    localStorage.removeItem("store");
+                    localStorage.setItem("store",source);
+                }
+                else{
+                    Cookie.write("store",source);
+                }
+            })
+        })
+
     });
