@@ -162,3 +162,18 @@
     width: 300px;
     padding-top: 3px;
 }
+
+.edit_right{
+    float: left;
+    width: 30%;
+    padding: 10px;
+}
+
+.hover{
+    border: 1px solid grey;
+}
+
+.editor_img{
+    width: 150px;
+    float: left;
+}

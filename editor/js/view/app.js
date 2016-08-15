@@ -5,7 +5,8 @@ define(["jquery",
     "collection/textimgs",
     "view/textimg",
     "view/article",
-    "view/img"
+    "view/img",
+
 ],function ($,_,Backbone,textimg,textimgs,TextImgView,articleView,imgView) {
     window.list = new textimgs ();
     var AppView = Backbone.View.extend({
@@ -16,8 +17,9 @@ define(["jquery",
             "click .third":"add"
         },
         initialize: function () {
-            this.itemCollection = new textimgs();
+            //this.itemCollection = new textimgs();
             this.list = this.$(".main_editor");
+            this.listenTo(list, "reset", this.addAll);
            // _.bindAll(this,"render","add","loadList","save");
             //this.listenTo(list,"add",this.add);
             //list.on("add",this.add);
@@ -45,6 +47,9 @@ define(["jquery",
             }
             this.list.append(view.render().el);
         },
+        addAll: function() {
+            list.each(this.add, this);
+        }
     });
     return AppView;
 })

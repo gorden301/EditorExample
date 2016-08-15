@@ -5,10 +5,12 @@ define(["jquery","underscore","backbone","text!template/itemheader.html"],functi
         events:{
             "dblclick .content_title":"edit",
             "blur .edit":"close",
-            "keypress .edit":"enterClose"
+            "keypress .edit":"enterClose",
+
         },
         initialize: function(){
-            this.listenTo(this.model,"change",this.render)
+            //this.listenTo(this.model,"change",this.render);
+            if(this.model)this.model.on("change",this.render,this);
         },
         render: function () {
             var html = this.template(this.model.toJSON());

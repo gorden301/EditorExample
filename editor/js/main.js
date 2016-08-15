@@ -13,6 +13,9 @@ require.config({
         },
         bootbox:{
             deps:["jquery","bootstrap"],
+        },
+        bootstrap:{
+            deps:["jquery"],
         }
     },
     paths:{
@@ -21,12 +24,18 @@ require.config({
         backbone:"libs/backbone-min-0.9.10",
         text:"libs/text",
         backboneLocalstorage:"libs/backbone-localstorage",
-        bootstrap:"libs/bootstrap.min",
+        bootstrap:"libs/bootstrap",
         bootbox:"libs/bootbox.min"
     }
 });
 
-require(["jquery","underscore","backbone","module/textimg","collection/textimgs","view/textimg","view/app"],
-    function ($,_,Backbone,textimg,textimgs,TextImgView,app) {
-        var App = new app();
+require(["jquery","underscore","backbone","bootbox","module/textimg","collection/textimgs","view/textimg","view/app"],
+    function ($,_,Backbone,bot,textimg,textimgs,TextImgView,app) {
+        var _model = new Backbone.Model();
+        var App = new app(
+            {
+                model:_model
+            }
+        );
+        initTiny();
     });
