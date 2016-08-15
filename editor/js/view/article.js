@@ -11,16 +11,19 @@ define(["jquery",
                 "dblclick .text-align-center":"edit",
                 "blur .edit":"close",
                 "keypress .edit":"enterClose",
-                "click .text-align-center":"matchMce"
+                "click .text-align-center":"matchMce",
+                "click .del":"del"
             },
             initialize: function () {
                 //this.listenTo(this.model,"change",this.render);
                 //this.model.on("change",this.render,this);
                 //this.model.on("change",this.render,this);
                 this.$el.hover(function (){
-                    $(this).addClass("hover")
+                    $(this).addClass("hover");
+                    $(this).find(".del").show();
                 },function () {
-                    $(this).removeClass("hover")
+                    $(this).removeClass("hover");
+                    //$(this).find(".del").hide();
                 })
             },
             render: function () {
@@ -52,10 +55,15 @@ define(["jquery",
                 }
             },
             matchMce: function () {
+                $(this).find(".del").show();
                 var article = new editor_article({model:this.model});
                 this.model.set('article',this.$el.find(".text-align-center").html());
                 this.model.set("callback",changetext(this.$el));
 
+            },
+            del: function () {
+                this.$el.remove();
+                this.model.collection.remove(this.model);
             }
         });
         return articleView;

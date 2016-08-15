@@ -5,21 +5,23 @@ define(["jquery",
     "text!template/img.tpl"
 ],function ($,_,Backbone,editor_img,imgTem) {
     var imgView = Backbone.View.extend({
-        className:".tem_box",
+        className:"tem_box",
         template: _.template(imgTem),
         events:{
             "click img":"show",
             "click button":"change",
             "click body":"hide",
-
+            "click .del":"del"
         },
         initialize: function () {
             //this.listenTo(this.model,"change",this.render);
             this.model.on("change",this.render,this);
             this.$el.hover(function (){
-                $(this).addClass("hover")
+                $(this).addClass("hover");
+                $(this).find(".del").show();
             },function () {
-                $(this).removeClass("hover")
+                $(this).removeClass("hover");
+                //$(this).find(".del").hide();
             })
         },
         render: function () {
@@ -41,6 +43,10 @@ define(["jquery",
         },
         hide: function () {
             this.$el.find(".changeImg").hide();
+        },
+        del: function () {
+            this.$el.remove();
+            this.model.collection.remove(this.model);
         }
     });
     return imgView;

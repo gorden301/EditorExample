@@ -96,11 +96,12 @@
 }
 
 .tem_box{
+    position: relative;
     width: 414px;
     height: auto;
     margin: 1px auto;
     padding: 0px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .box_content{
@@ -176,4 +177,14 @@
 .editor_img{
     width: 150px;
     float: left;
+}
+
+.del{
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    /* margin-left: -10px; */
+    top: 5px;
+    left: -20px;
+    color: red;
 }
