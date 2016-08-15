@@ -21,7 +21,7 @@ define(["jquery",
                 $(this).find(".del").show();
             },function () {
                 $(this).removeClass("hover");
-                //$(this).find(".del").hide();
+                $(this).find(".del").hide();
             })
         },
         render: function () {
@@ -30,7 +30,7 @@ define(["jquery",
         },
         show: function (){
             var show  = new editor_img({model:this.model});
-            this.$el.find(".changeImg").show();
+            //this.$el.find(".changeImg").show();
         },
         change: function (e) {
             var imgSrc = $(e.currentTarget).attr("data-src");

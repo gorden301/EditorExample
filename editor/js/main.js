@@ -38,4 +38,10 @@ require(["jquery","underscore","backbone","bootbox","module/textimg","collection
             }
         );
         initTiny();
+        $('#preview').on('click',function(){
+            bootbox.alert({
+                title:'预览',
+                message:$('.main_editor').html()
+            });
+        });
     });

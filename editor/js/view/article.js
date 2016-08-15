@@ -23,7 +23,7 @@ define(["jquery",
                     $(this).find(".del").show();
                 },function () {
                     $(this).removeClass("hover");
-                    //$(this).find(".del").hide();
+                    $(this).find(".del").hide();
                 })
             },
             render: function () {
@@ -55,7 +55,7 @@ define(["jquery",
                 }
             },
             matchMce: function () {
-                $(this).find(".del").show();
+                //$(this).find(".del").show();
                 var article = new editor_article({model:this.model});
                 this.model.set('article',this.$el.find(".text-align-center").html());
                 this.model.set("callback",changetext(this.$el));
