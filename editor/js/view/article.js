@@ -16,7 +16,7 @@ define(["jquery",
             initialize: function () {
                 //this.listenTo(this.model,"change",this.render);
                 //this.model.on("change",this.render,this);
-                this.model.on("change",this.render,this);
+                //this.model.on("change",this.render,this);
                 this.$el.hover(function (){
                     $(this).addClass("hover")
                 },function () {
@@ -53,7 +53,9 @@ define(["jquery",
             },
             matchMce: function () {
                 var article = new editor_article({model:this.model});
-                this.model.set("callback",changetext(this.$el))
+                this.model.set('article',this.$el.find(".text-align-center").html());
+                this.model.set("callback",changetext(this.$el));
+
             }
         });
         return articleView;

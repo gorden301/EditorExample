@@ -16,10 +16,11 @@ function changetext(obj){
     timer = null;
     initTiny();
     if(!tinyMCE.activeEditor) return;
-    tinyMCE.activeEditor.setContent(obj.find(".text-align-center").html());
+    tinyMCE.activeEditor.setContent(obj[0].children[0].innerHTML);
 
     timer = setInterval(function(){
         var temp = tinyMCE.activeEditor.getContent();
-        obj.find(".text-align-center").html(temp);
+       // obj.find(".text-align-center").html(temp);
+        obj[0].children[0].innerHTML = temp;
     },10);
 }
