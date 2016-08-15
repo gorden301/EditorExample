@@ -16,11 +16,16 @@ function changetext(obj){
     timer = null;
     initTiny();
     if(!tinyMCE.activeEditor) return;
+    //if(obj[0].children[1].children[0]){
+    //    var content = obj[0].children[1].children[0].innerHTML;
+    //} else {
+    //    var content = obj[0].children[1].innerHTML;
+    //}
     tinyMCE.activeEditor.setContent(obj[0].children[1].innerHTML);
 
     timer = setInterval(function(){
         var temp = tinyMCE.activeEditor.getContent();
        // obj.find(".text-align-center").html(temp);
         obj[0].children[1].innerHTML = temp;
-    },10);
+    },20);
 }

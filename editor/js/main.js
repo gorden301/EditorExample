@@ -73,7 +73,23 @@ require(["jquery","underscore","backbone","bootbox","module/textimg","collection
                 }
                 else{
                     Cookie.write("store",source);
-                }
+                };
+                $.ajax({
+                    url:'/savemsg',
+                    data:{_source:source},
+                    type:'post',
+                    success:function(e){
+                        if(e.success){
+                            alert('成功发送');
+                        }
+                        else{
+                            alert('no');
+                        }
+                    },
+                    error:function(){
+                        alert('重复了');
+                    }
+                });
             })
         })
 
