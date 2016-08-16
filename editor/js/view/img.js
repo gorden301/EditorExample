@@ -17,12 +17,18 @@ define(["jquery",
             //this.listenTo(this.model,"change",this.render);
             this.model.on("change",this.render,this);
             $(".main_editor").append(this.render().el);
-            this.$el.hover(function (){
+            //this.$el.hover(function (){
+            //    $(this).addClass("hover");
+            //    $(this).find(".del").show();
+            //},function () {
+            //    $(this).removeClass("hover");
+            //    $(this).find(".del").hide();
+            //});
+            this.$el.click(function () {
                 $(this).addClass("hover");
                 $(this).find(".del").show();
-            },function () {
-                $(this).removeClass("hover");
-                $(this).find(".del").hide();
+                $(this).siblings().removeClass("hover");
+                $(this).siblings().find(".del").hide();
             })
         },
         render: function () {

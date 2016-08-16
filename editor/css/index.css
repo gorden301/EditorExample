@@ -79,6 +79,7 @@
 }
 
 .editor_middle{
+    height: 600px;
     width: 540px;
     background: #eeeeee;
     margin: 10px 0px;
@@ -91,7 +92,7 @@
     background-color: #ffffff;
     position: relative;
     z-index: 3;
-    height: 328px;
+    height: 600px;
     overflow-y: auto;
     padding-bottom: 60px;
 }
