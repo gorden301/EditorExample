@@ -1,0 +1,48 @@
+{
+  "requirejs": {
+    "main": {
+      "options": {
+        "baseUrl": "",
+        "paths": {
+          "jquery":"editor/js/libs/jquery-1.9.1.min",
+          "underscore":"editor/js/libs/underscore-1.6",
+          "backbone":"editor/js/libs/backbone-min-0.9.10",
+          "text":"editor/js/libs/text",
+          "backboneLocalstorage":"editor/js/libs/backbone-localstorage",
+          "bootstrap":"editor/js/libs/bootstrap",
+          "bootbox":"editor/js/libs/bootbox.min",
+          "edit":"editor/js/libs/edit",
+          "collection":"editor/js/collection/textimgs",
+          "model":"editor/js/module/textimg",
+          "appview":"editor/js/view/app",
+          "articleview":"editor/js/view/article",
+          "editor_articleView":"editor/js/view/editor_article",
+          "editor_imgView":"editor/js/view/editor_img",
+          "imgView":"editor/js/view/img"
+
+        },
+        "web": {
+          "include": [
+            "jquery",
+            "underscore",
+            "backbone",
+            "text",
+            "backboneLocalstorage",
+            "bootstrap",
+            "bootbox",
+            "edit",
+            "collection",
+            "model",
+            "appview",
+            "articleview",
+            "editor_articleView",
+            "editor_imgView",
+            "imgView"
+
+          ],
+          "out": "dest/main.built.js"
+        }
+      }
+    }
+  }
+}
