@@ -16,6 +16,7 @@ define(["jquery",
             },
             initialize: function () {
                 $(".main_editor").append(this.render().el);
+                $(this.render().el).addClass("fadeInLeft animated");
                 //this.listenTo(this.model,"change",this.render);
                 //this.model.on("change",this.render,this);
                 //this.model.on("change",this.render,this);

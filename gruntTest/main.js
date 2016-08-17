@@ -38,8 +38,9 @@ require.config({
     }
 });
 
-require(["jquery","underscore","backbone","bootbox","model","collection","editor/js/view/textimg","appview"],
-    function ($,_,Backbone,bot,textimg,textimgs,TextImgView,app) {
+require(["jquery","underscore","backbone","bootbox","model","collection","appview"],
+    function ($,_,Backbone,bot,textimg,textimgs,app) {
+        console.log("1111");
         var _model = new Backbone.Model();
         var App = new app(
             {

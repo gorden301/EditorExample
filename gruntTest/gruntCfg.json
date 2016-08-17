@@ -2,7 +2,26 @@
   "requirejs": {
     "main": {
       "options": {
-        "baseUrl": "",
+        "baseUrl": "./",
+        "shim":{
+          "underscore":{
+            "exports":"_"
+          },
+          "backbone":{
+            "deps":["underscore","jquery"],
+            "exports":"Backbone"
+          },
+          "backboneLocalstorage":{
+            "deps":["backbone"],
+            "exports":"Store"
+          },
+          "bootbox":{
+            "deps":["jquery","bootstrap"]
+          },
+          "bootstrap":{
+            "deps":["jquery"]
+          }
+        },
         "paths": {
           "jquery":"editor/js/libs/jquery-1.9.1.min",
           "underscore":"editor/js/libs/underscore-1.6",
@@ -21,27 +40,10 @@
           "imgView":"editor/js/view/img"
 
         },
-        "web": {
           "include": [
-            "jquery",
-            "underscore",
-            "backbone",
-            "text",
-            "backboneLocalstorage",
-            "bootstrap",
-            "bootbox",
-            "edit",
-            "collection",
-            "model",
-            "appview",
-            "articleview",
-            "editor_articleView",
-            "editor_imgView",
-            "imgView"
-
+              "main"
           ],
           "out": "dest/main.built.js"
-        }
       }
     }
   }

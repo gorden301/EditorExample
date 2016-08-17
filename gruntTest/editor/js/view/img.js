@@ -17,6 +17,7 @@ define(["jquery",
             //this.listenTo(this.model,"change",this.render);
             this.model.on("change",this.render,this);
             $(".main_editor").append(this.render().el);
+            $(this.render().el).addClass("fadeInRight animated");
             //this.$el.hover(function (){
             //    $(this).addClass("hover");
             //    $(this).find(".del").show();

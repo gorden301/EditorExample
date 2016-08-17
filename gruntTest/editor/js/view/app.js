@@ -15,6 +15,7 @@ define(["jquery",
         //    "click .third":"add"
         //},
         initialize: function () {
+            console.log("1111");
             //this.itemCollection = new textimgs();
             this.list = this.$(".main_editor");
             this.listenTo(list, "reset", this.addAll);
